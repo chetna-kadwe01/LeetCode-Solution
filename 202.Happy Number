@@ -1,0 +1,23 @@
+class Solution {
+    public boolean isHappy(int n) {
+        ArrayList<Integer>list = new ArrayList<>();
+      while(n!=1){
+       int sum = 0;
+        while(n>0){
+           int dig = n %10;
+            sum = sum + dig*dig;
+            n = n/10;
+        }
+        if(sum==1){
+            System.out.println(true);
+        }
+            if(list.contains(sum)){
+            return false;
+        }
+        list.add(sum);
+        n = sum;
+
+      } 
+      return true;
+    }
+}
